@@ -9,8 +9,10 @@ const authenticatedOptions = (
     <div className="grid-container">
       <Search/>
       <Nav.Link to="/cart">🛒MY CART</Nav.Link>
-      <Nav.Link href="#change-password">CHANGE PASSWORD</Nav.Link>
-      <Nav.Link href="#sign-out">LOG OUT</Nav.Link>
+      <div className="together">
+        <Nav.Link href="#change-password">| CHANGE PASSWORD</Nav.Link>
+        <Nav.Link href="#sign-out">| LOG OUT</Nav.Link>
+      </div>
     </div>
   </Fragment>
 )
@@ -33,7 +35,7 @@ const Header = ({ user }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
+        { user && <span className="welcome-text">Welcome, {user.email}</span>}
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
     </Navbar.Collapse>

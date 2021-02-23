@@ -29,6 +29,14 @@
   display: inline-flex;
 }
 
+.welcome-text {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #6b705c;
+  margin: 0px 0px 50px 0px;
+}
+
 a {
   color: #6b705c !important;
   &:hover {
