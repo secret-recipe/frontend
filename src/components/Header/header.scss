@@ -1,0 +1,28 @@
+.outer-div {
+  display: block;
+}
+
+.nav {
+  background-color: #ffe8d6;
+  padding: 2em;
+  display: flex;
+}
+
+.nav-link-right {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #6b705c !important;
+  &:hover {
+    color: #A5A58D !important;
+  }
+}
+
+.nav-link-center {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #6b705c !important;
+  &:hover {
+    color: #A5A58D !important;
+  }
+  text-align: center !important;
+}

@@ -1,32 +1,31 @@
 import React, { Fragment } from 'react'
+import './header.scss'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
+    <Nav.Link className="nav-link-right" href="#change-password">CHANGE PASSWORD</Nav.Link>
+    <Nav.Link className="nav-link-right" href="#sign-out">LOG OUT</Nav.Link>
   </Fragment>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
+    <Nav.Link className="nav-link-right" href="#sign-up">| SIGN UP</Nav.Link>
+    <Nav.Link className="nav-link-right" href="#sign-in">| LOG IN </Nav.Link>
   </Fragment>
 )
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link to="/">Home</Nav.Link>
+    <Nav.Link className="nav-link-center" to="/cart">🛒MY CART</Nav.Link>
+    <Nav.Link className="nav-link-right" to="/">| HOME</Nav.Link>
   </Fragment>
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      react-auth-template
-    </Navbar.Brand>
+  <Navbar className="nav" expand="md">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
