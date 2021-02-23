@@ -1,0 +1,19 @@
+input {
+  opacity: 60%;
+  outline-color: #A5A58D;
+  color: #6B705C;
+}
+
+textarea:focus, input:focus {
+  outline-color: #6B705C;
+}
+
+input[type="submit"] {
+  background-color: #CB997E;
+  border-color: #CB997E;
+}
+
+input[type="submit"]:hover {
+  background-color: #DDBEA9;
+  border-color: #DDBEA9;
+}
