@@ -83,7 +83,7 @@ function Profile ({ user, owner }) {
 
   const handleDelete = (event) => {
     axios({
-      url: `${apiUrl}/recipes/${event.target.name}`,
+      url: `${apiUrl}/#/recipes/${event.target.name}`,
       method: 'DELETE',
       headers: {
         Authorization: `Token token=${user.token}`
@@ -150,6 +150,7 @@ function Profile ({ user, owner }) {
         </div>
       </div>
       <div className="recipes">Your Recipes ({index.length})</div>
+      <div className="post-recipe"><a href="#/recipes">Post a recipe</a></div>
       <div className="profile-index-container">
         {recipeData.length > 2 && (
           <Masonry
