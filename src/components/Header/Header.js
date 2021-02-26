@@ -35,7 +35,7 @@ const Header = ({ user }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
-        { user && <span className="welcome-text">Welcome, {user.email}</span>}
+        { user && <span className="welcome-text">Welcome, <Nav.Link href="#profile">{user.email}</Nav.Link></span>}
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
     </Navbar.Collapse>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import './signin.scss'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -50,10 +51,10 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
+          <h3 className="log-in">LOG IN</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className="email-pswd">Email Address</Form.Label>
               <Form.Control
                 required
                 type="email"
@@ -64,7 +65,7 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="email-pswd">Password</Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -77,8 +78,9 @@ class SignIn extends Component {
             <Button
               variant="primary"
               type="submit"
+              className="submit-btn"
             >
-              Submit
+              SUBMIT
             </Button>
           </Form>
         </div>

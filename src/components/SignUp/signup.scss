@@ -1,0 +1,28 @@
+.sign-up {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  color: #6B705C;
+}
+
+.email-pswd {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  color: #6B705C;
+}
+
+#inputID::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #6B705C;
+}
+
+.submit-btn {
+  background-color: #CB997E;
+  border-color: #CB997E;
+  margin-bottom: 100px;
+}
+
+.submit-btn:hover {
+  background-color: #DDBEA9;
+  border-color: #DDBEA9;
+}

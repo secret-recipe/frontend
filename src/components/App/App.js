@@ -9,6 +9,7 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import Profile from '../Profile/profile'
 
 class App extends Component {
   constructor () {
@@ -16,8 +17,13 @@ class App extends Component {
 
     this.state = {
       user: null,
+      searchValue: '',
       msgAlerts: []
     }
+  }
+
+  handleSearchInputChange = (event) => {
+    this.setState({ searchValue: event.target.value })
   }
 
   setUser = user => this.setState({ user })
@@ -34,7 +40,7 @@ class App extends Component {
     return (
       <Fragment>
         <Logo/>
-        <Header user={user} />
+        <Header user={user} handleChange={this.handleSearchInputChange} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
@@ -50,12 +56,18 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute
+            user={user}
+            path="/profile"
+            render={() => <Profile user={user} history={history} />}
+          />
         </main>
       </Fragment>
     )
