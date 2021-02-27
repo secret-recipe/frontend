@@ -11,6 +11,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Profile from '../Profile/profile'
 import Recipe from '../Recipes/Recipe'
+import Index from '../Index/Index'
 
 class App extends Component {
   constructor () {
@@ -36,7 +37,7 @@ class App extends Component {
   }
 
   render () {
-    const { msgAlerts, user } = this.state
+    const { msgAlerts, user, searchValue } = this.state
 
     return (
       <Fragment>
@@ -57,7 +58,11 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-
+          <Route
+            exact
+            path="/"
+            render={() => <Index user={user} searchValue={searchValue} />}
+          />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
